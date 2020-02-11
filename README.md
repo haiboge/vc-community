@@ -1,41 +1,66 @@
-Virto Commerce 2.x
-============
+# Platform 3 Overview
 
-| Branch  | Status |
-| ------------- | ------------- |
-| [Master - releases](https://github.com/VirtoCommerce/vc-community)  | [![Build Status](http://ci.virtocommerce.com:8080/buildStatus/icon?job=VirtoCommerce 2.x CI Build - master)](http://ci.virtocommerce.com:8080/job/VirtoCommerce 2.x CI Build - master)  |
-| [Development / Integration](https://github.com/VirtoCommerce/vc-community/tree/dev)  | [![Build Status](http://ci.virtocommerce.com:8080/buildStatus/icon?job=VirtoCommerce 2.x CI Build - dev)](http://ci.virtocommerce.com:8080/job/VirtoCommerce 2.x CI Build - dev)  |
-| Feature (on going feature dev)  | [![Build Status](http://ci.virtocommerce.com:8080/buildStatus/icon?job=VirtoCommerce 2.x CI Build - branches)](http://ci.virtocommerce.com:8080/job/VirtoCommerce 2.x CI Build - branches)  |
+## Overview
 
-Virto Commerce is the second generation release and is the only enterprise level e-commerce product fully available under Open Source license. Virto Commerce is based on .NET 4.5 with extensive use of MVC, IoC, EF, Azure, Angular JS and many other cutting edge technologies. It can be deployed in Microsoft Cloud (Azure), Amazon Web Services (AWS) and on-premise. Mobile App Starter built using Ionic Framework is also available.
+Virto Commerce is a highly scalable eCommerce product for fast-growing and large companies. It provides powerful enterprise-class features right out-of-the-box and gives you the flexibility to create your own unique eCommerce solution while utilizing agile principles.
 
-Documentation: http://docs.virtocommerce.com
+Our Virto Commerce 3 development efforts were focused on moving to ASP.NET Core, performance, architecture improvements, further enhancements and fixing architectural bugs.
 
-Want to chat with other members of the Virto Commerce community?
+Virto Commerce 3 is a major release and it consists of Virto Commerce Platform and Virto Commerce Modules. It provides easy and clear migration from 2.x version by preserving complete backward compatibility for API and Database Schema. During development, the platform and 18 core modules were moved.
 
-[![Join the chat at https://gitter.im/VirtoCommerce/vc-community](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/VirtoCommerce/vc-community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+## Technology Stack Used
 
-DEMO
------------
-http://virtocommerce.com/try-now/online-demo
+In our work, we always try to use advanced technologies. Our decision to choose technologies described below was the result of our extensive experience working with Microsoft products.
 
-Cloud Private Demo
------------
+We decided to use the following stack of technologies:
 
-Setup your own private Microsoft Cloud environment and evaluate the latest version of Virto Commerce, <a href="http://docs.virtocommerce.com/display/vc2devguide/Deploy+from+GitHub+to+Microsoft+Cloud+Azure" target="_blank">read more</a>.
+* ASP.NET Core 2.2.0 as base platform
+* EF Core 2.2.0 as primary ORM
+* ASP.NET Core Identity 2.2.0 for authentication and authorization
+* OpenIddict 2.0.0 for OAuth authorization
+* WebPack as primary design/runtime bundler and minifier
+* Swashbuckle.AspNetCore.SwaggerGen for Swagger docs and UI
+* SignalR Core for push notifications
+* AngularJS 1.4 as primary framework for SPA
+* HangFire 1.6.21 for run background tasks
 
-<a href="https://azuredeploy.net/" target="_blank">
-  <img alt="Deploy to Azure" src="http://azuredeploy.net/deploybutton.png"/>
-</a>
+## Solution Architecture Principles Overview
 
-Contributing
------------
-We welcome & recognize contributors to Virto Commerce. There are many benefits available for our contributers, from special licensing to project involvement and access to private repositories. Follow the guide below to contribute:
+<a class="crosslink" href="https://virtocommerce.com/glossary/what-is-b2b-ecommerce" target="_blank">Platform and modules</a> are written using <a href="https://en.wikipedia.org/wiki/Domain-driven_design" rel="nofollow">DDD</a>, <a href="https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)" rel="nofollow">SOLID</a>, <a href="https://en.wikipedia.org/wiki/Test-driven_development" rel="nofollow">Test Driven Development</a> methodologies. For a presentation layer, we use <a href="https://en.wikipedia.org/wiki/Model_View_ViewModel" rel="nofollow">MVVM</a>.
 
-1. Before starting work on a new contribution, take a moment and search the commits and issues for similar proposals.
-2. Fork the Virto Commerce repository into your account according to <a href="https://help.github.com/articles/fork-a-repo/">GitHub Fork a Repo</a> document.
-3. Make your changes. We also recommend you test your code before contributing.
-4. Once ready to commit your changes, create a pull request according to <a href="https://help.github.com/articles/creating-a-pull-request/">GitHub Create a Pull Request</a>.
-5. Once received, the Virto Commerce development team will review your contribution and if approved, will pull your request to the appropriate branch.
+![Virto Commerce 3 Architecture](/docs/media/architecture-circle.png "Virto Commerce 3 Architecture")
 
-Note: You must agree to <a href="http://virtocommerce.com/contribute-agreement">Virto Commerce Contributor License Agreement</a> before pulling any requests. You only need to sign the agreement once.
+## Comparison with Platform 2.x
+
+In the new version, we change primary technology stack to .NET Core for the platform application and all key modules. Eliminate known technical and architecture design issues of 2.x version (Caching, Overloaded core module, Asynchronous code, Platform Complexity, Extensibility, Performance, Authentication and Authorization)
+Improve the extensibility and unification of the application. Unified architecture and good architecture practices usage reduce the training time for developers who just start to work with Virto Commerce.
+
+Virto Commerce Platform 3 helps you increase development speed and significantly reduce time to market.
+
+## Introduction to Virto Commerce
+
+These Virto Commerce docs help you learn and use the Virto Commerce platform, from your local solution to optimizing complex enterprise solutions. 
+
+* [What’s new](/docs/whats-new.md)
+* Setup
+  * [Deploy Platform 3 from precompiled binaries on Windows](/docs/deploy-from-precompiled-binaries-windows.md)
+  * [Deploy Platform 3 from precompiled binaries on Linux](/docs/deploy-from-precompiled-binaries-linux.md)
+  * [Deploy Platform 3 from source code](/docs/deploy-from-source-code.md)
+  * [Connect Storefront to Platform](/docs/connect-storefront-to-platform-v3.md)
+* [Getting Started](/docs/getting-started.md)
+* [Migration from 2.0 to 3.0](/docs/Migrate-module-from-the-Platform-2.0-to-3.0-version.md)
+
+## License
+
+Copyright (c) Virto Solutions LTD.  All rights reserved.
+
+Licensed under the Virto Commerce Open Software License (the "License"); you
+may not use this file except in compliance with the License. You may
+obtain a copy of the License at
+
+http://virtocommerce.com/opensourcelicense
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+implied.
